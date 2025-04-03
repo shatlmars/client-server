@@ -22,7 +22,9 @@ private slots:
 
     void on_inIpAddress_textChanged(const QString &arg1);
 
+
 private:
     Ui::MainWindow *ui;
+
 };
 #endif // MAINWINDOW_H

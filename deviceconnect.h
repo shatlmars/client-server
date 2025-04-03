@@ -12,7 +12,10 @@ public:
     void connectDevice(QString ip, int port);
 
 signals:
-
+    void connected();
+    void disconnected();
+    void stateChanged(QAbstractSocket::SocketState);
+    void errorOccurred(QAbstractSocket::SocketError);
 private:
     QTcpSocket _socket;
     QString _ip;

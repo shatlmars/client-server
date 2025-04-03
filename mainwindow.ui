@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>549</width>
-    <height>244</height>
+    <width>452</width>
+    <height>338</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -18,45 +18,21 @@
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>30</y>
-      <width>521</width>
-      <height>151</height>
+      <y>50</y>
+      <width>166</width>
+      <height>201</height>
      </rect>
     </property>
     <property name="title">
      <string>GroupBox</string>
     </property>
-    <widget class="QLineEdit" name="inIpAddress">
-     <property name="geometry">
-      <rect>
-       <x>170</x>
-       <y>50</y>
-       <width>171</width>
-       <height>26</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">#inIpAddress[state = &quot;0&quot;]{
-
-background-color: rgb(198, 70, 0);
-
-}
-
-#inIpAddress[state = &quot;1&quot;]{
-    background-color: rgb(45, 190, 32);
-}</string>
-     </property>
-     <property name="inputMask">
-      <string>000.000.000.000;_</string>
-     </property>
-    </widget>
     <widget class="QLabel" name="label">
      <property name="geometry">
       <rect>
-       <x>70</x>
-       <y>60</y>
-       <width>91</width>
-       <height>20</height>
+       <x>12</x>
+       <y>33</y>
+       <width>66</width>
+       <height>18</height>
       </rect>
      </property>
      <property name="text">
@@ -66,9 +42,9 @@ background-color: rgb(198, 70, 0);
     <widget class="QLabel" name="label_2">
      <property name="geometry">
       <rect>
-       <x>100</x>
-       <y>100</y>
-       <width>66</width>
+       <x>10</x>
+       <y>110</y>
+       <width>30</width>
        <height>18</height>
       </rect>
      </property>
@@ -76,12 +52,25 @@ background-color: rgb(198, 70, 0);
       <string>Port</string>
      </property>
     </widget>
+    <widget class="QPushButton" name="btnConnect">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>170</y>
+       <width>151</width>
+       <height>26</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Connect</string>
+     </property>
+    </widget>
     <widget class="QSpinBox" name="spinBox">
      <property name="geometry">
       <rect>
-       <x>170</x>
-       <y>90</y>
-       <width>71</width>
+       <x>10</x>
+       <y>130</y>
+       <width>72</width>
        <height>27</height>
       </rect>
      </property>
@@ -92,19 +81,45 @@ background-color: rgb(198, 70, 0);
       <number>65535</number>
      </property>
     </widget>
-    <widget class="QPushButton" name="btnConnect">
+    <widget class="QLineEdit" name="inIpAddress">
      <property name="geometry">
       <rect>
-       <x>360</x>
-       <y>50</y>
-       <width>88</width>
-       <height>71</height>
+       <x>10</x>
+       <y>70</y>
+       <width>151</width>
+       <height>26</height>
       </rect>
      </property>
-     <property name="text">
-      <string>Connect</string>
+     <property name="styleSheet">
+      <string notr="true">#inIpAddress[state = &quot;0&quot;]
+{
+	background-color: rgb(222, 51, 59);
+}
+
+#inIpAddress[state = &quot;1&quot;]{
+	background-color: rgb(65, 255, 0);
+}</string>
+     </property>
+     <property name="inputMask">
+      <string>000.000.000.000;_</string>
+     </property>
+     <property name="clearButtonEnabled">
+      <bool>true</bool>
+     </property>
+     <property name="state" stdset="0">
+      <string/>
      </property>
     </widget>
+   </widget>
+   <widget class="QListWidget" name="listWidget">
+    <property name="geometry">
+     <rect>
+      <x>190</x>
+      <y>20</y>
+      <width>256</width>
+      <height>261</height>
+     </rect>
+    </property>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
@@ -112,7 +127,7 @@ background-color: rgb(198, 70, 0);
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>549</width>
+     <width>452</width>
      <height>23</height>
     </rect>
    </property>

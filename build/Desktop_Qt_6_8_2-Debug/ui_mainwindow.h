@@ -14,6 +14,7 @@
 #include <QtWidgets/QGroupBox>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
+#include <QtWidgets/QListWidget>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
@@ -28,11 +29,12 @@ class Ui_MainWindow
 public:
     QWidget *centralwidget;
     QGroupBox *groupBox;
-    QLineEdit *inIpAddress;
     QLabel *label;
     QLabel *label_2;
-    QSpinBox *spinBox;
     QPushButton *btnConnect;
+    QSpinBox *spinBox;
+    QLineEdit *inIpAddress;
+    QListWidget *listWidget;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -40,42 +42,45 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName("MainWindow");
-        MainWindow->resize(549, 244);
+        MainWindow->resize(526, 357);
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName("centralwidget");
         groupBox = new QGroupBox(centralwidget);
         groupBox->setObjectName("groupBox");
-        groupBox->setGeometry(QRect(10, 30, 521, 151));
+        groupBox->setGeometry(QRect(0, 10, 166, 271));
+        label = new QLabel(groupBox);
+        label->setObjectName("label");
+        label->setGeometry(QRect(12, 33, 66, 18));
+        label_2 = new QLabel(groupBox);
+        label_2->setObjectName("label_2");
+        label_2->setGeometry(QRect(12, 133, 30, 18));
+        btnConnect = new QPushButton(groupBox);
+        btnConnect->setObjectName("btnConnect");
+        btnConnect->setGeometry(QRect(12, 233, 80, 26));
+        spinBox = new QSpinBox(groupBox);
+        spinBox->setObjectName("spinBox");
+        spinBox->setGeometry(QRect(12, 200, 72, 27));
+        spinBox->setMinimum(1024);
+        spinBox->setMaximum(65535);
         inIpAddress = new QLineEdit(groupBox);
         inIpAddress->setObjectName("inIpAddress");
-        inIpAddress->setGeometry(QRect(170, 50, 171, 26));
-        inIpAddress->setStyleSheet(QString::fromUtf8("#inIpAddress[state = \"0\"]{\n"
-"\n"
-"background-color: rgb(198, 70, 0);\n"
-"\n"
+        inIpAddress->setGeometry(QRect(10, 70, 151, 26));
+        inIpAddress->setStyleSheet(QString::fromUtf8("#inIpAddress[state = \"0\"]\n"
+"{\n"
+"	background-color: rgb(222, 51, 59);\n"
 "}\n"
 "\n"
 "#inIpAddress[state = \"1\"]{\n"
-"    background-color: rgb(45, 190, 32);\n"
+"	background-color: rgb(65, 255, 0);\n"
 "}"));
-        label = new QLabel(groupBox);
-        label->setObjectName("label");
-        label->setGeometry(QRect(70, 60, 91, 20));
-        label_2 = new QLabel(groupBox);
-        label_2->setObjectName("label_2");
-        label_2->setGeometry(QRect(100, 100, 66, 18));
-        spinBox = new QSpinBox(groupBox);
-        spinBox->setObjectName("spinBox");
-        spinBox->setGeometry(QRect(170, 90, 71, 27));
-        spinBox->setMinimum(1024);
-        spinBox->setMaximum(65535);
-        btnConnect = new QPushButton(groupBox);
-        btnConnect->setObjectName("btnConnect");
-        btnConnect->setGeometry(QRect(360, 50, 88, 71));
+        inIpAddress->setClearButtonEnabled(true);
+        listWidget = new QListWidget(centralwidget);
+        listWidget->setObjectName("listWidget");
+        listWidget->setGeometry(QRect(170, 10, 256, 261));
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName("menubar");
-        menubar->setGeometry(QRect(0, 0, 549, 23));
+        menubar->setGeometry(QRect(0, 0, 526, 23));
         MainWindow->setMenuBar(menubar);
         statusbar = new QStatusBar(MainWindow);
         statusbar->setObjectName("statusbar");
@@ -90,10 +95,11 @@ public:
     {
         MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "MainWindow", nullptr));
         groupBox->setTitle(QCoreApplication::translate("MainWindow", "GroupBox", nullptr));
-        inIpAddress->setInputMask(QCoreApplication::translate("MainWindow", "000.000.000.000;_", nullptr));
         label->setText(QCoreApplication::translate("MainWindow", "IP addres:", nullptr));
         label_2->setText(QCoreApplication::translate("MainWindow", "Port", nullptr));
         btnConnect->setText(QCoreApplication::translate("MainWindow", "Connect", nullptr));
+        inIpAddress->setInputMask(QCoreApplication::translate("MainWindow", "000.000.000.000;_", nullptr));
+        inIpAddress->setProperty("state", QVariant(QString()));
     } // retranslateUi
 
 };
